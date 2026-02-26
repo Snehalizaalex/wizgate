@@ -1964,6 +1964,7 @@ input:checked+.slider:before {
         hyphens: auto;
         margin-bottom: 1rem;
         text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+        transform: translateX(-20px);
     }
 
     .hero .sub-heading {
@@ -2028,6 +2029,10 @@ input:checked+.slider:before {
 
     .assessment .section-title {
         font-size: 1.6rem;
+    }
+
+    .contact-card-wrapper {
+        transform: translateX(-20px);
     }
 
     .usp-premium-bar {
