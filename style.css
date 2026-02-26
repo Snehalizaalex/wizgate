@@ -1920,10 +1920,6 @@ input:checked+.slider:before {
         display: none;
     }
 
-    .darkveil-container {
-        display: none !important;
-    }
-
     .nav-menu {
         position: fixed;
         top: 0;
