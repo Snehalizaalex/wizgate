@@ -2075,7 +2075,6 @@ input:checked+.slider:before {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: radial-gradient(circle at 50% 30%, #0e2240 0%, #0B1828 60%, #06101a 100%);
     }
 
     .hero-split {
