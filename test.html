@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Wizgate - AJW Polish Language Academy. Master Polish for life and work in Poland with certified native tutors.">
+    <title>Wizgate | Polish Language Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="logo1.jpeg">
+</head>
+
+<body>
+    <div id="global-background"></div>
+    <!-- Top Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-logo-small">
+                <img src="logo1.jpeg" alt="Wizgate Small Logo">
+                <span>WIZGATE LANGUAGE ACADEMY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="test.html">Self Assessment</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="contact.html" class="btn-gold-small hide-mobile">Enroll Now</a>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Self Assessment Test Section -->
+        <section id="test" class="section assessment">
+            <div id="test-bg" class="darkveil-container"></div>
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">Self Assessment Test</h2>
+                <div class="assessment-container" data-reveal="up">
+                    <form id="assessment-form" class="assessment-form">
+
+                        <!-- Personal Details Section -->
+                        <div class="user-details-section">
+                            <h3 class="section-subtitle">Personal Details</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Language*</label>
+                                    <select name="language" required>
+                                        <option value="English">Angielski/English</option>
+                                        <option value="Polish">Polski/Polish</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" name="lastName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mobile phone number*</label>
+                                    <input type="tel" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email address*</label>
+                                    <input type="email" name="email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions Section -->
+                        <div class="terms-section">
+                            <h3 class="section-subtitle">Terms & Conditions</h3>
+
+                            <div class="term-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" required>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="term-text">
+                                    <p>By submitting this form, you consent to the processing of your personal data
+                                        (first name, last name, phone number, email address) for the purpose of
+                                        conducting a placement test, contacting you about the results, and organizing
+                                        language courses.<br>
+                                        Providing your data is voluntary but necessary to process your request.<br>
+                                        The data controller is Wizgate International z o.o., You have the right to
+                                        access, correct, delete, or withdraw your consent at any time by contacting:
+                                        <a
+                                            href="mailto:wizgatelanguageacademy@gmail.com">wizgatelanguageacademy@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="term-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" required>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="term-text">
+                                    <p>In accordance with Article 6(1)(a) of Regulation (EU) 2016/679 of the European
+                                        Parliament and of the Council of 27 April 2016, I consent to the processing of
+                                        my personal data [first name, last name, mobile phone number, email address,
+                                        company name where I work] by Wizgate International Sp. z o.o. and by
+                                        cooperating entities under data processing agreements, for the purpose of
+                                        conducting a placement test, contacting me by phone to discuss the test results
+                                        and/or conducting an oral assessment, as well as for further contact related to
+                                        the organization and comprehensive service connected with language courses in
+                                        which I will participate.<br>
+                                        Providing the above data is voluntary; however, it is necessary to achieve the
+                                        purposes mentioned above.<br>
+                                        The controller of your personal data is Wizgate International Sp. z o.o., The
+                                        data controller may be contacted via email at <a
+                                            href="mailto:wizgatelanguageacademy@gmail.com">wizgatelanguageacademy@gmail.com</a>,
+                                        by phone at +487394700065, or in writing at the registered office address of
+                                        Wizgate International Sp. z o.o.<br>
+                                        You have the right to access your data, correct it, delete it, restrict its
+                                        processing, transfer it, object to the processing of personal data (if
+                                        voluntarily provided), and withdraw your consent at any time without affecting
+                                        the lawfulness of processing carried out before the withdrawal.<br>
+                                        Withdrawal of consent must be submitted in writing or electronically to: <a
+                                            href="mailto:wizgatelanguageacademy@gmail.com">wizgatelanguageacademy@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="term-item">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" required>
+                                    <span class="slider"></span>
+                                </label>
+                                <div class="term-text">
+                                    <p>In accordance with Article 6(1)(a) of Regulation (EU) 2016/679, I consent to the
+                                        processing of my personal data [first name, last name, mobile phone number,
+                                        email address, company name where I work] by Wizgate International Sp. z o.o.
+                                        for the purpose of sending marketing offers related to language training,
+                                        translation services, and related services.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="section-subtitle test-title">Assessment Questions</h3>
+                        <div class="question-item">
+                            <p>1. How do you say "Hello" in Polish?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q1" value="a"> Cześć</label>
+                                <label><input type="radio" name="q1" value="b"> Dziękuję</label>
+                                <label><input type="radio" name="q1" value="c"> Proszę</label>
+                            </div>
+                        </div>
+                        <div class="question-item">
+                            <p>2. What does "Dzień dobry" mean?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q2" value="a"> Good evening</label>
+                                <label><input type="radio" name="q2" value="b"> Good morning / Good day</label>
+                                <label><input type="radio" name="q2" value="c"> Goodbye</label>
+                            </div>
+                        </div>
+                        <div class="question-item">
+                            <p>3. Can you count to 10 in Polish?</p>
+                            <div class="options">
+                                <label><input type="radio" name="q3" value="a"> Yes</label>
+                                <label><input type="radio" name="q3" value="b"> No</label>
+                                <label><input type="radio" name="q3" value="c"> Only some numbers</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-gold-large">Submit Assessment</button>
+                    </form>
+                    <div id="assessment-result" class="result-box hidden">
+                        <h3>Your Result:</h3>
+                        <p id="result-message"></p>
+                        <button id="reset-test" class="btn-link">Retake Test</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo1.jpeg" alt="Wizgate Logo Small">
+                <span>WIZGATE</span>
+            </div>
+            <p>&copy; 2026 Wizgate Language Academy. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919446414381" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.878-.788-1.472-1.761-1.645-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.123.546 4.122 1.5 5.867L.178 23.498l5.807-1.42A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.04c-1.87 0-3.644-.486-5.187-1.353l-.372-.22-3.847.942.96-3.7-.24-.393A9.973 9.973 0 012.04 12C2.04 6.502 6.502 2.04 12 2.04c5.498 0 9.96 4.462 9.96 9.96s-4.462 9.96-9.96 9.96z" />
+        </svg>
+    </a>
+</body>
+
+</html>
