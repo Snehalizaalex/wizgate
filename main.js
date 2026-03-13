@@ -226,17 +226,49 @@ Score: ${score} / ${totalQuestions}
 Percentage: ${percentage}%
 `;
 
-            window.location.href = `mailto:info@wizgate.eu,${email}?subject=${encodeURIComponent('Self Assessment Result')}&body=${encodeURIComponent(bodyText)}`;
+            // Prepare FormSubmit payload
+            const formData = new FormData();
+            formData.append("name", `${firstName} ${lastName}`);
+            formData.append("email", email); // Set sender email so you can reply
+            formData.append("_replyto", email);
+            formData.append("_subject", "New Self Assessment Result");
+            formData.append("message", bodyText);
+            formData.append("_captcha", "false"); // Disable captcha for silent submission
 
-            assessmentForm.classList.add('hidden');
-            resultBox.classList.remove('hidden');
+            // Disable submit button text temporarily to show loading
+            const submitBtn = assessmentForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Submitting...";
+            submitBtn.disabled = true;
 
-            if (scoreDisplay) scoreDisplay.innerText = `Mark: ${score} / ${totalQuestions}`;
-            if (percentageDisplay) percentageDisplay.innerText = `Percentage: ${percentage}%`;
+             fetch("https://formsubmit.co/ajax/info@wizgate.eu", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                 // On success or completion, show result screen
+                 assessmentForm.classList.add('hidden');
+                 resultBox.classList.remove('hidden');
 
-            if (score <= 15) resultMessage.innerText = "Beginner - You're just starting! Join our A1 course.";
-            else if (score <= 25) resultMessage.innerText = "Elementary - Good start! You're ready for intensive A1.";
-            else resultMessage.innerText = "Ready for A1-A2 - Great job! You have a solid foundation.";
+                 if (scoreDisplay) scoreDisplay.innerText = `Mark: ${score} / ${totalQuestions}`;
+                 if (percentageDisplay) percentageDisplay.innerText = `Percentage: ${percentage}%`;
+
+                 if (score <= 15) resultMessage.innerText = "Beginner - You're just starting! Join our A1 course.";
+                 else if (score <= 25) resultMessage.innerText = "Elementary - Good start! You're ready for intensive A1.";
+                 else resultMessage.innerText = "Ready for A1-A2 - Great job! You have a solid foundation.";
+
+            })
+            .catch(error => {
+                 console.error("Error submitting form:", error);
+                 alert("There was an error submitting your assessment. Please try again or contact us directly.");
+            })
+            .finally(() => {
+                 // Restore button state
+                 submitBtn.innerText = originalBtnText;
+                 submitBtn.disabled = false;
+            });
+
         });
     }
 
