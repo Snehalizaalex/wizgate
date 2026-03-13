@@ -164,6 +164,8 @@ const initAssessment = () => {
     const assessmentForm = document.getElementById('assessment-form');
     const resultBox = document.getElementById('assessment-result');
     const resultMessage = document.getElementById('result-message');
+    const scoreDisplay = document.getElementById('result-score');
+    const percentageDisplay = document.getElementById('result-percentage');
     const resetBtn = document.getElementById('reset-test');
 
     if (assessmentForm && resultBox) {
@@ -171,15 +173,69 @@ const initAssessment = () => {
             e.preventDefault();
             const data = new FormData(assessmentForm);
             let score = 0;
-            if (data.get('q1') === 'a') score++;
-            if (data.get('q2') === 'b') score++;
-            if (data.get('q3') === 'a') score++;
+            const totalQuestions = 35;
+            if (data.get('q1') === 'b') score++;
+            if (data.get('q2') === 'c') score++;
+            if (data.get('q3') === 'c') score++;
+            if (data.get('q4') === 'a') score++;
+            if (data.get('q5') === 'c') score++;
+            if (data.get('q6') === 'c') score++;
+            if (data.get('q7') === 'c') score++;
+            if (data.get('q8') === 'b') score++;
+            if (data.get('q9') === 'a') score++;
+            if (data.get('q10') === 'b') score++;
+            if (data.get('q11') === 'c') score++;
+            if (data.get('q12') === 'd') score++;
+            if (data.get('q13') === 'c') score++;
+            if (data.get('q14') === 'a') score++;
+            if (data.get('q15') === 'c') score++;
+            if (data.get('q16') === 'b') score++;
+            if (data.get('q17') === 'b') score++;
+            if (data.get('q18') === 'b') score++;
+            if (data.get('q19') === 'b') score++;
+            if (data.get('q20') === 'c') score++;
+            if (data.get('q21') === 'c') score++;
+            if (data.get('q22') === 'b') score++;
+            if (data.get('q23') === 'c') score++;
+            if (data.get('q24') === 'b') score++;
+            if (data.get('q25') === 'c') score++;
+            if (data.get('q26') === 'b') score++;
+            if (data.get('q27') === 'c') score++;
+            if (data.get('q28') === 'a') score++;
+            if (data.get('q29') === 'c') score++;
+            if (data.get('q30') === 'c') score++;
+            if (data.get('q31') === 'a') score++;
+            if (data.get('q32') === 'b') score++;
+            if (data.get('q33') === 'b') score++;
+            if (data.get('q34') === 'b') score++;
+            if (data.get('q35') === 'a') score++;
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+
+            const firstName = data.get('firstName') || '';
+            const lastName = data.get('lastName') || '';
+            const email = data.get('email') || '';
+            const phone = data.get('phone') || '';
+
+            const bodyText = `Assessment Result for ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+Language: ${data.get('language') || ''}
+
+Score: ${score} / ${totalQuestions}
+Percentage: ${percentage}%
+`;
+
+            window.location.href = `mailto:info@wizgate.eu,${email}?subject=${encodeURIComponent('Self Assessment Result')}&body=${encodeURIComponent(bodyText)}`;
 
             assessmentForm.classList.add('hidden');
             resultBox.classList.remove('hidden');
 
-            if (score <= 1) resultMessage.innerText = "Beginner - You're just starting! Join our A1 course.";
-            else if (score === 2) resultMessage.innerText = "Elementary - Good start! You're ready for intensive A1.";
+            if (scoreDisplay) scoreDisplay.innerText = `Mark: ${score} / ${totalQuestions}`;
+            if (percentageDisplay) percentageDisplay.innerText = `Percentage: ${percentage}%`;
+
+            if (score <= 15) resultMessage.innerText = "Beginner - You're just starting! Join our A1 course.";
+            else if (score <= 25) resultMessage.innerText = "Elementary - Good start! You're ready for intensive A1.";
             else resultMessage.innerText = "Ready for A1-A2 - Great job! You have a solid foundation.";
         });
     }
@@ -189,6 +245,8 @@ const initAssessment = () => {
             assessmentForm.reset();
             assessmentForm.classList.remove('hidden');
             resultBox.classList.add('hidden');
+            if (scoreDisplay) scoreDisplay.innerText = "";
+            if (percentageDisplay) percentageDisplay.innerText = "";
         });
     }
 };
